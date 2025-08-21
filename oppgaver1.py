@@ -74,7 +74,7 @@ hypot = float(input("Skriv inn lengde på [m] hypotenus:"))
 # k**2 + k**2 = h**2 så k**2 = h**2 - k**2
 # k = kvadratroden av k**2
 import numpy as nu
-storKatet = nu.sqrt((hypot**2) - (litenKatet**2))
+storKatet = nu.sqrt(hypot**2 - litenKatet**2)
 print("Lengde [m] på siste katet er:", f'{storKatet:.1f}')
 #omkrets =  h + k1 + k2 areal = g * h /2
 omkrets = hypot + litenKatet + storKatet
@@ -88,7 +88,7 @@ hypot = float(input("Skriv inn lengde på [m] hypotenus:"))
 # k**2 + k**2 = h**2 så k**2 = h**2 - k**2
 # k = kvadratroden av k**2
 import numpy as nu
-storKatet = nu.sqrt((hypot**2) - (litenKatet**2))
+storKatet = nu.sqrt(hypot**2 - litenKatet**2)
 print("Lengde [m] på siste katet er:", f'{storKatet:.1f}')
 #omkrets =  h + k1 + k2 areal = g * h /2
 omkrets = hypot + litenKatet + storKatet
