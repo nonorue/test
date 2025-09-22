@@ -20,7 +20,7 @@ resultat = andregrad(tall1, tall2, tall3)
 
 print(resultat)
 
-#%%
+#%% Areal av rettvinklet rekant med y = ax + b
 def x_nullpunkt(a, b):
     x = (-b/a)
     return x
@@ -37,4 +37,30 @@ areal = areal_av_trekant(y_null, x_null)
 
 print("Null punkt til x blir:", x_null)
 print("Arealet avgrenset av x-akse og y-akse når a er:", a, "og b er:", b, "blir:", areal)
+
+#%% Omkrets av rettvinklet rekant med y = ax + b
+
+import numpy as np    
+
+def beregn_hypotenus(katet1, katet2):
+    hypotenus_squared = katet1**2 + katet2**2
+    hypotenus = np.sqrt(hypotenus_squared)
+    return hypotenus
+
+def x_nullpunkt(a, b):
+    x = (-b/a)
+    return x
+
+def areal_av_trekant(g,h):
+    return 0.5*g*h
+
+a = float(input("Gi en stigningsverdi:"))
+b = float(input("Gi en konstantverdi:"))
+
+y_null = b
+x_null = abs(x_nullpunkt(a, b))
+omkrets = beregn_hypotenus(y_null, x_null)+y_null+x_null
+print(f'Omkrets til flatestykket som er avgrenset med x og y akse med gitte a og b verdier blir: {omkrets:.2f}')
+
+
 
