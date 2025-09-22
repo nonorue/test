@@ -22,7 +22,7 @@ print(resultat)
 
 #%%
 def x_nullpunkt(a, b):
-    x = (-b/-a)
+    x = (-b/a)
     return x
 
 def areal_av_trekant(g,h):
@@ -32,8 +32,9 @@ a = float(input("Gi en stigningsverdi:"))
 b = float(input("Gi en konstantverdi:"))
 
 y_null = b
-x_null = x_nullpunkt(a, b)
+x_null = abs(x_nullpunkt(a, b))
 areal = areal_av_trekant(y_null, x_null)
 
+print("Null punkt til x blir:", x_null)
 print("Arealet avgrenset av x-akse og y-akse når a er:", a, "og b er:", b, "blir:", areal)
 
