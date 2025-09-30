@@ -12,13 +12,20 @@ def andregrad(a, b, c):
     x2 = ((b*-1) - np.sqrt(b**2-(4*a*c)))/(2*a)
     return x1, x2
 
-tall1 = float(input("Skriv inn a verdi:"))
-tall2 = float(input("Skriv inn b verdi:"))
-tall3 = float(input("Skriv inn c verdi:"))
+a = float(input("Skriv inn konstanten a:"))
+b = float(input("Skriv inn konstanten b:"))
+c = float(input("Skriv inn konstanten c:"))
 
-resultat = andregrad(tall1, tall2, tall3)
+test = b**2 - (4*a*c)
 
-print(resultat)
+if test > 0:
+    print("Denne formelen har to løsninger")
+    print(float(andregrad(a, b, c)[0]), float(andregrad(a, b, c)[1]))
+elif test ==0:
+    print("Denne formelen har en løsning")
+    print(andregrad(a, b, c)[0])
+else:
+    print("Denne ligningen har ingen løsninger")
 
 #%% Areal av rettvinklet rekant med y = ax + b
 def x_nullpunkt(a, b):
@@ -61,6 +68,29 @@ y_null = b
 x_null = abs(x_nullpunkt(a, b))
 omkrets = beregn_hypotenus(y_null, x_null)+y_null+x_null
 print(f'Omkrets til flatestykket som er avgrenset med x og y akse med gitte a og b verdier blir: {omkrets:.2f}')
+
+#%%
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Definer funksjonen
+
+# Generer en rekke t-verdier
+t_verdier = np.linspace(0, 10, 200)
+
+# Beregn de tilsvarende h(t)-verdiene
+h_verdier = h(t_verdier)
+
+# Lag plottet
+plt.figure(figsize=(8, 6))
+plt.plot(t_verdier, h_verdier)
+plt.xlabel('t')
+plt.ylabel('h(t)')
+plt.xlim(0,20)
+plt.ylim(0,30)
+plt.grid(True)
+plt.show()
 
 
 
